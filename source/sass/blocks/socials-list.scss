@@ -1,0 +1,36 @@
+.socials-list {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  width: 112px;
+
+  @include vp-1023 {
+    width: 95px;
+  }
+
+  @include vp-767 {
+    margin-left: -5px;
+  }
+}
+
+.socials-list__item {
+  margin-right: auto;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  a {
+    display: flex;
+    padding: 5px;
+
+    @include vp-1023 {
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}

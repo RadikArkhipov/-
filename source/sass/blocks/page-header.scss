@@ -1,0 +1,113 @@
+.page-header {
+  background-color: #b8860b;
+  font-weight: 500;
+  width: 100%;
+
+  @include vp-1023 {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  @include vp-767 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+.page-header__container {
+  display: flex;
+  align-items: center;
+  padding-top: 35px;
+  padding-bottom: 35px;
+
+  @include vp-1023 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  @include vp-767 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+.page-header__logo-wrapper {
+  display: flex;
+  margin-right: auto;
+
+  @include vp-767 {
+    width: 100%;
+    align-items: center;
+  }
+}
+
+.page-header__logo {
+  display: flex;
+  cursor: pointer;
+
+  @include vp-1023 {
+    svg {
+      width: 38px;
+      height: 20px;
+    }
+  }
+
+  @include vp-767 {
+    margin-right: auto;
+
+    svg {
+      width: 42px;
+      height: 22px;
+    }
+  }
+}
+
+.page-header__nav-toggle {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  background-image: url("../img/svg/icon-menu-burger.svg");
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 14px;
+  display: none;
+
+  @include vp-767 {
+    display: flex;
+  }
+}
+
+.page-header--nav-open {
+  position: fixed;
+  min-height: 100vh;
+  overflow: auto;
+  color: #011c40;
+
+  .page-header__container {
+    margin-right: 0;
+    width: 89%;
+    background-color: $color-alice-blue;
+    flex-direction: column;
+  }
+
+  .page-header__logo-wrapper {
+    margin-bottom: 33px;
+  }
+
+  .page-header__logo {
+    svg {
+      fill: #011c40;
+    }
+  }
+
+  .page-header__nav-toggle {
+    background-image: url("../img/svg/icon-menu-cross.svg");
+    width: 15px;
+    height: 15px;
+  }
+
+  .site-nav {
+    display: flex;
+  }
+}

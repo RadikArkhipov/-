@@ -1,0 +1,42 @@
+.footer-nav {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  width: 594px;
+  margin-right: auto;
+
+  @include vp-1023 {
+    width: 441px;
+  }
+
+  @include vp-767 {
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 25px;
+  }
+}
+
+.footer-nav__item {
+  margin-right: auto;
+
+  @include vp-767 {
+    margin-right: 0;
+    margin-bottom: 1px;
+  }
+
+  &:last-child {
+    margin-right: 0;
+
+    @include vp-767 {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    color: inherit;
+    display: block;
+    padding: 5px 0;
+  }
+}

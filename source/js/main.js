@@ -6,6 +6,13 @@ import {Form} from './modules/form-validate/form';
 
 window.addEventListener('DOMContentLoaded', () => {
 
+  const pageHeader = document.querySelector('[data-page-header]');
+  const navToggle = document.querySelector('[data-open-menu]');
+
+  navToggle.addEventListener('click', function () {
+    pageHeader.classList.toggle('page-header--nav-open');
+  });
+
   // Utils
   // ---------------------------------
 
