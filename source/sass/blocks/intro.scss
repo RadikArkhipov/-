@@ -1,0 +1,109 @@
+.intro {
+  @media (min-width: 1024px) {
+    background-color: #011c40;
+    background-image: url("../img/intro-dt-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 650px;
+    padding-top: 270px;
+    padding-left: 99px;
+    background-position: center 100%;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+
+    @include retina {
+      background-image: url("../img/intro-dt-bg@2x.jpg");
+    }
+  }
+
+  @media (min-width: 768px) {
+    background-image: url("../img/intro-tb-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 638px;
+    padding-top: 268px;
+    background-position: center 100%;
+
+    @media (min-width: 800px) {
+      padding-top: 200px;
+    }
+
+    @include retina {
+      background-image: url("../img/intro-tb-bg@2x.jpg");
+    }
+  }
+
+  @include vp-767 {
+    background-image: url("../img/intro-mb-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 500px;
+    padding-top: 175px;
+    background-position: center 100%;
+
+    @media (min-width: 400px) {
+      padding-top: 73px;
+    }
+
+    @include retina {
+      background-image: url("../img/intro-mb-bg@2x.jpg");
+    }
+  }
+}
+
+.intro__container {
+  h1 {
+    font-weight: 700;
+    font-size: 54px;
+    line-height: 66px;
+    margin: 0 0 12px;
+
+    br {
+      display: none;
+
+      @media (min-width: 320px) {
+        display: block;
+      }
+
+      @media (min-width: 400px) {
+        display: none;
+      }
+    }
+
+    @include vp-1023 {
+      font-size: 50px;
+      line-height: 61px;
+    }
+
+    @include vp-767 {
+      font-size: 36px;
+      line-height: 45px;
+    }
+  }
+
+  p {
+    font-size: 20px;
+    line-height: 24px;
+    margin: 0;
+
+    br {
+      display: none;
+
+      @media (min-width: 320px) {
+        display: block;
+      }
+
+      @media (min-width: 400px) {
+        display: none;
+      }
+    }
+
+    @include vp-1023 {
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    @include vp-767 {
+      font-size: 16px;
+    }
+  }
+}

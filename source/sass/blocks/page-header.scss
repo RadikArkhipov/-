@@ -1,7 +1,8 @@
 .page-header {
-  background-color: #b8860b;
   font-weight: 500;
   width: 100%;
+  position: absolute;
+  z-index: 10;
 
   @include vp-1023 {
     font-size: 14px;
@@ -21,8 +22,8 @@
   padding-bottom: 35px;
 
   @include vp-1023 {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 27px;
+    padding-bottom: 27px;
   }
 
   @include vp-767 {
