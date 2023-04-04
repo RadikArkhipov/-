@@ -13,6 +13,7 @@ window.addEventListener('DOMContentLoaded', () => {
     pageHeader.classList.toggle('page-header--nav-open');
   });
 
+
   // Utils
   // ---------------------------------
 
@@ -28,6 +29,38 @@ window.addEventListener('DOMContentLoaded', () => {
     const form = new Form();
     window.form = form;
     form.init();
+
+    let isMapSupport = true;
+
+    function init() {
+      let map = new ymaps.Map('map', {
+        center: [59.93863106417265, 30.323036499999905],
+        zoom: 16,
+      });
+
+      let placemark = new ymaps.Placemark([59.9375996045652, 30.32270122387305], {}, {
+        iconLayout: 'default#image',
+        iconImageHref: 'img/sprite/icon-address.svg',
+        iconImageSize: [18, 22],
+        iconImageOffset: [-15, -15],
+      });
+
+      map.controls.remove('geolocationControl'); // удаляем геолокацию
+      map.controls.remove('searchControl'); // удаляем поиск
+      map.controls.remove('trafficControl'); // удаляем контроль трафика
+      map.controls.remove('typeSelector'); // удаляем тип
+      map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
+      map.controls.remove('zoomControl'); // удаляем контрол зуммирования
+      map.controls.remove('rulerControl'); // удаляем контрол правил
+
+      map.geoObjects.add(placemark);
+    }
+
+    try {
+      ymaps.ready(init);
+    } catch (err) {
+      isMapSupport = false;
+    }
   });
 });
 

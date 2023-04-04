@@ -428,6 +428,7 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
+  scroll-behavior: smooth;
 }
 
 html {
@@ -1304,6 +1305,17 @@ button,
   z-index: 10;
 }
 
+.page-header__overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 43, 102, 0.5);
+  display: none;
+}
+
 .page-header__container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1348,6 +1360,10 @@ button,
   color: #011c40;
 }
 
+.page-header--nav-open .page-header__overlay {
+  display: block;
+}
+
 .page-header--nav-open .page-header__container {
   margin-right: 0;
   width: 89%;
@@ -1356,6 +1372,7 @@ button,
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  height: 100vh;
 }
 
 .page-header--nav-open .page-header__logo-wrapper {
@@ -1416,6 +1433,10 @@ button,
   -ms-flex-align: center;
   align-items: center;
   padding: 5px 0;
+}
+
+.site-nav__item a.focus-visible:focus.focus-visible:focus {
+  outline: 2px solid #f9fbfd;
 }
 
 .page-footer {
@@ -1567,6 +1588,540 @@ button,
   display: none;
 }
 
+.advantages {
+  background-color: #e3ecf6;
+  color: #011c40;
+  background-image: url("../img/advantages-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 100%;
+}
+
+.advantages__container {
+  padding-top: 111px;
+  padding-bottom: 119px;
+}
+
+.advantages__container h2 {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 42px;
+  margin: 0 0 49px;
+  text-align: center;
+}
+
+.advantages__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.advantages__item {
+  background-color: #f9fbfd;
+  min-height: 241px;
+  width: 31.03%;
+  margin-right: 3.44%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.advantages__item:nth-child(3n+3) {
+  margin-right: 0;
+}
+
+.advantages__item-wrapper {
+  padding: 30px;
+}
+
+.advantages__item-wrapper svg {
+  display: inline-block;
+  margin-bottom: 11px;
+}
+
+.advantages__item-wrapper h3 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  margin: 0 0 10px;
+}
+
+.advantages__item-wrapper h3 br {
+  display: none;
+}
+
+.advantages__item-wrapper p {
+  font-size: 14px;
+}
+
+.advantages__liner {
+  margin: 0;
+}
+
+.advantages__liner br {
+  display: none;
+}
+
+.advantages__inclusive {
+  margin: 0;
+}
+
+.advantages__inclusive br:nth-child(n+3) {
+  display: none;
+}
+
+.advantages__zodiac {
+  margin: 0;
+}
+
+.advantages__zodiac br {
+  display: none;
+}
+
+.catalog {
+  background-color: #f9fbfd;
+}
+
+.catalog__container {
+  padding: 85px 115px 90px;
+}
+
+.catalog__container h2 {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 42px;
+  margin: 0 0 49px;
+  color: #011c40;
+  text-align: center;
+}
+
+.catalog__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  width: 23%;
+  margin-right: 2.65%;
+  margin-bottom: 30px;
+  min-height: 386px;
+  position: relative;
+}
+
+.product-card:nth-child(4n+4) {
+  margin-right: 0;
+}
+
+.product-card h3 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  margin: 0;
+}
+
+.product-card.focus-visible:focus .product-card__front {
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+  -webkit-transition: 0.6s ease;
+  -o-transition: 0.6s ease;
+  transition: 0.6s ease;
+}
+
+.product-card.focus-visible:focus .product-card__back {
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  -webkit-transition: 0.6s ease;
+  -o-transition: 0.6s ease;
+  transition: 0.6s ease;
+}
+
+.product-card__front {
+  width: 100%;
+  height: 100%;
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 22px 29px;
+}
+
+.product-card__front h3 {
+  margin-top: auto;
+}
+
+.product-card__front--astoria {
+  background-image: url("../img/cruises/cruises-content-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.product-card__front--elina {
+  background-image: url("../img/cruises/cruises-content-2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.product-card__front--atlantis {
+  background-image: url("../img/cruises/cruises-content-3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.product-card__front--odysseus {
+  background-image: url("../img/cruises/cruises-content-4.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.product-card__front--olympia {
+  background-image: url("../img/cruises/cruises-content-5.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.product-card__front--aurora {
+  background-image: url("../img/cruises/cruises-content-6.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.product-card__front--leonor {
+  background-image: url("../img/cruises/cruises-content-7.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.product-card__front--minio {
+  background-image: url("../img/cruises/cruises-content-8.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.product-card__back {
+  background-color: #011c40;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  padding: 29px 25px 11px 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.product-card__back h3 {
+  margin-bottom: 13px;
+}
+
+.product-card__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+}
+
+.product-card__info dd + dt {
+  margin-top: 12px;
+}
+
+.product-card__info dt {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.product-card__info dd {
+  font-size: 14px;
+  line-height: 20px;
+  color: #d8d8d9;
+  margin: 0;
+}
+
+.product-card__button {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  color: #011c40;
+  background-color: #f9fbfd;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.reservation__container {
+  padding: 50px 160px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.reservation__promotion {
+  width: 47.4%;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-top: 163px;
+}
+
+.reservation__promotion h2 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 60px;
+  margin: 0 0 8px;
+}
+
+.reservation__promotion p {
+  font-size: 18px;
+  line-height: 27px;
+  margin: 0;
+  max-width: 352px;
+}
+
+.reservation__promotion p br {
+  display: none;
+}
+
+.reservation__form {
+  width: 403px;
+  background-color: #011c40;
+  -webkit-box-shadow: 0 4px 45px rgba(1, 28, 64, 0.15);
+  box-shadow: 0 4px 45px rgba(1, 28, 64, 0.15);
+}
+
+.reservation__form h3 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  margin: 0 0 27px;
+  color: #f9fbfd;
+}
+
+.reservation__form h3 br {
+  display: none;
+}
+
+.reservation__form form {
+  padding: 44px 50px 50px;
+}
+
+.reservation__us-contacts {
+  margin-bottom: 23px;
+}
+
+.reservation__us-contacts input {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  padding: 11px 15px 9px;
+  color: rgba(1, 28, 64, 0.7);
+  border: 1px solid transparent;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.reservation__us-contacts input:last-child {
+  margin-bottom: 0;
+}
+
+.reservation__checkbox {
+  font-size: 10px;
+  line-height: 13px;
+  color: #f9fbfd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  margin-bottom: 32px;
+}
+
+.reservation__checkbox input:checked + label::before {
+  background-image: url("../img/svg/icon-tick.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.reservation__checkbox label {
+  position: relative;
+  cursor: pointer;
+  margin-left: 23px;
+}
+
+.reservation__checkbox label br {
+  display: none;
+}
+
+.reservation__checkbox label::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background-color: #f9fbfd;
+  border: 1px solid transparent;
+  top: 3px;
+  left: -22px;
+}
+
+.reservation__button {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  width: 100%;
+  padding: 11px 15px;
+  background-color: #f9fbfd;
+  color: #011c40;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.contacts {
+  color: #011c40;
+  background-color: #f9fbfd;
+}
+
+.contacts__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.contacts__text-wrapper {
+  width: 43.1%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-top: 75px;
+}
+
+.contacts__text-wrapper p {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  margin: 0 0 32px;
+}
+
+.contacts__text-wrapper p br {
+  display: none;
+}
+
+.contacts__address {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.contacts__address p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+  padding-left: 10px;
+}
+
+.contacts__address p br {
+  display: none;
+}
+
+.contacts__call {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.contacts__call a {
+  font-size: 16px;
+  line-height: 24px;
+  padding-left: 10px;
+  color: #011c40;
+}
+
+.contacts__map {
+  width: 48.27%;
+  margin-right: auto;
+}
+
+.contacts__map .map {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 /* @mixin hover-focus {
     @media (hover: hover) {
       &:hover:not(.focus-visible) {
@@ -1641,6 +2196,23 @@ button,
   .travel__text p br {
     display: block;
   }
+
+  .reservation {
+    background-color: #e3ecf6;
+    background-image: url("../img/reservation-tb-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 100%;
+    color: #011c40;
+  }
+
+  .contacts__map {
+    background-image: url("../img/contacts-tb-map.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 335px;
+    background-position: center 100%;
+  }
 }
 
 @media (min-width: 768px) and (min-width: 800px) {
@@ -1652,6 +2224,14 @@ button,
 @media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 768px) and (-o-min-device-pixel-ratio: 3/2), (min-width: 768px) and (min-resolution: 144dpi), (min-width: 768px) and (min-resolution: 1.5dppx) {
   .intro {
     background-image: url("../img/intro-tb-bg@2x.jpg");
+  }
+
+  .reservation {
+    background-image: url("../img/reservation-tb-bg@2x.jpg");
+  }
+
+  .contacts__map {
+    background-image: url("../img/contacts-tb-map@2x.jpg");
   }
 }
 
@@ -1674,17 +2254,82 @@ button,
     -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
     filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
   }
+
+  .reservation {
+    background-color: #e3ecf6;
+    background-image: url("../img/reservation-dt-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 100%;
+    min-height: 555px;
+    color: #011c40;
+  }
+
+  .contacts__map {
+    background-image: url("../img/contacts-dt-map.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 306px;
+    background-position: center 100%;
+  }
 }
 
 @media (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1024px) and (-o-min-device-pixel-ratio: 3/2), (min-width: 1024px) and (min-resolution: 144dpi), (min-width: 1024px) and (min-resolution: 1.5dppx) {
   .intro {
     background-image: url("../img/intro-dt-bg@2x.jpg");
   }
+
+  .reservation {
+    background-image: url("../img/reservation-dt-bg@2x.jpg");
+  }
+
+  .contacts__map {
+    background-image: url("../img/contacts-dt-map@2x.jpg");
+  }
+}
+
+@media (max-width: 1360px) {
+  .product-card:nth-child(4n+4) {
+    margin-right: 2.65%;
+  }
+
+  .product-card {
+    width: 31.56%;
+  }
+
+  .product-card:nth-child(3n+3) {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 1360px) and (max-width: 1023px) {
+  .product-card:nth-child(3n+3) {
+    margin-right: 4.64%;
+  }
+}
+
+@media (max-width: 1360px) and (max-width: 550px) {
+  .product-card:nth-child(3n+3) {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 1359px) {
+  .reservation__promotion h2 {
+    line-height: 50px;
+  }
 }
 
 @media (max-width: 1279px) {
   .travel__text h3 {
     margin-top: 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  .reservation__container {
+    padding-right: 100px;
+    padding-left: 100px;
   }
 }
 
@@ -1781,6 +2426,156 @@ button,
     margin-top: -9px;
     margin-bottom: 15px;
   }
+
+  .advantages__container {
+    padding-top: 90px;
+    padding-bottom: 99px;
+  }
+
+  .advantages__container h2 {
+    font-size: 26px;
+    line-height: 39px;
+    margin-bottom: 50px;
+  }
+
+  .advantages__item {
+    min-height: 310px;
+    width: 30.38%;
+    margin-right: 4.42%;
+  }
+
+  .advantages__item-wrapper {
+    padding: 25px 16px 15px 18px;
+  }
+
+  .advantages__item-wrapper svg {
+    width: 36px;
+    height: 26px;
+    margin-bottom: 14px;
+  }
+
+  .advantages__item-wrapper h3 br {
+    display: block;
+  }
+
+  .advantages__item-wrapper h3 {
+    line-height: 25px;
+    margin-bottom: 9px;
+  }
+
+  .advantages__liner br {
+    display: block;
+  }
+
+  .advantages__inclusive br {
+    display: none;
+  }
+
+  .advantages__inclusive br:nth-child(4n+4) {
+    display: block;
+  }
+
+  .advantages__zodiac br {
+    display: block;
+  }
+
+  .advantages__zodiac {
+    margin-top: 19px;
+  }
+
+  .catalog__container {
+    padding: 89px 60px 71px;
+  }
+
+  .catalog__container h2 {
+    font-size: 26px;
+    line-height: 39px;
+  }
+
+  .product-card {
+    width: 47.68%;
+    margin-right: 4.64%;
+  }
+
+  .product-card:nth-child(2n+2) {
+    margin-right: 0;
+  }
+
+  .product-card__front {
+    padding: 26px 35px;
+  }
+
+  .product-card__back {
+    padding: 31px 34px 11px;
+  }
+
+  .reservation__container {
+    padding: 88px 174px 100px 175px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .reservation__promotion {
+    margin: 0 0 53px;
+    width: 100%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .reservation__promotion h2 {
+    font-size: 34px;
+    line-height: 51px;
+    margin-bottom: 4px;
+  }
+
+  .reservation__promotion p {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .contacts__container {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  .contacts__text-wrapper {
+    width: 47.7%;
+    margin-top: 66px;
+  }
+
+  .contacts__text-wrapper p {
+    margin-bottom: 26px;
+  }
+
+  .contacts__address svg {
+    margin-bottom: 15px;
+  }
+
+  .contacts__address p {
+    margin: 0;
+  }
+
+  .contacts__map {
+    width: 47.78%;
+  }
+}
+
+@media (max-width: 1023px) and (max-width: 767px) {
+  .advantages__inclusive br:nth-child(4n+4) {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .contacts__text-wrapper p br {
+    display: block;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1872,7 +2667,7 @@ button,
 
   .page-footer__logo {
     margin-right: 0;
-    margin-bottom: 25px;
+    margin-bottom: 22px;
   }
 
   .page-footer__logo svg {
@@ -1886,12 +2681,12 @@ button,
     -ms-flex-direction: column;
     flex-direction: column;
     width: 100%;
-    margin-bottom: 25px;
+    margin-bottom: 18px;
   }
 
   .footer-nav__item {
     margin-right: 0;
-    margin-bottom: 1px;
+    margin-bottom: 7px;
   }
 
   .footer-nav__item:last-child {
@@ -1947,6 +2742,196 @@ button,
     line-height: 34px;
     margin-top: 0;
     margin-bottom: 16px;
+  }
+
+  .advantages__container {
+    padding-top: 57px;
+    padding-bottom: 35px;
+  }
+
+  .advantages__container h2 {
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 30px;
+  }
+
+  .advantages__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .advantages__item {
+    min-height: 249px;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+
+  .advantages__item:nth-child(n+2) {
+    min-height: 250px;
+  }
+
+  .advantages__item-wrapper {
+    padding: 25px 15px 20px 20px;
+  }
+
+  .advantages__liner br {
+    display: none;
+  }
+
+  .advantages__inclusive {
+    padding-right: 20px;
+  }
+
+  .advantages__inclusive br:nth-child(n+3):nth-child(3n+3) {
+    display: block;
+  }
+
+  .advantages__zodiac br {
+    display: none;
+  }
+
+  .advantages__zodiac {
+    margin-top: 0;
+  }
+
+  .catalog__container {
+    padding: 56px 25px 34px;
+  }
+
+  .catalog__container h2 {
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 30px;
+  }
+
+  .product-card__front {
+    padding: 16px 24px;
+  }
+
+  .product-card__back {
+    padding: 30px 25px 11px;
+  }
+
+  .reservation {
+    background-color: #e3ecf6;
+    background-image: url("../img/reservation-mb-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #011c40;
+  }
+
+  .reservation__container {
+    padding-top: 60px;
+    padding-bottom: 63px;
+  }
+
+  .reservation__promotion {
+    margin-bottom: 34px;
+  }
+
+  .reservation__promotion h2 {
+    font-size: 24px;
+    line-height: 31px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .reservation__promotion p br {
+    display: block;
+  }
+
+  .reservation__promotion p {
+    font-size: 16px;
+    line-height: 22px;
+    max-width: 257px;
+  }
+
+  .reservation__form {
+    width: 100%;
+  }
+
+  .reservation__form h3 br {
+    display: block;
+  }
+
+  .reservation__form h3 {
+    line-height: 25px;
+    text-align: center;
+  }
+
+  .reservation__form form {
+    padding: 35px 30px 40px;
+  }
+
+  .reservation__us-contacts {
+    margin-bottom: 20px;
+  }
+
+  .reservation__checkbox {
+    line-height: 12px;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    margin-bottom: 27px;
+  }
+
+  .reservation__checkbox label {
+    margin-left: 28px;
+  }
+
+  .reservation__checkbox label br {
+    display: block;
+  }
+
+  .reservation__checkbox label::before {
+    top: 2px;
+    left: -27px;
+  }
+
+  .contacts__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-top: 60px;
+    padding-bottom: 64px;
+  }
+
+  .contacts__text-wrapper {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 37px;
+  }
+
+  .contacts__text-wrapper p {
+    margin-bottom: 27px;
+  }
+
+  .contacts__text-wrapper p br {
+    display: none;
+  }
+
+  .contacts__address p {
+    margin: 0;
+  }
+
+  .contacts__map {
+    width: 100%;
+  }
+
+  .contacts__map {
+    background-image: url("../img/contacts-mb-map.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 316px;
+    background-position: center 100%;
   }
 }
 
@@ -2017,6 +3002,27 @@ button,
   .intro {
     background-image: url("../img/intro-mb-bg@2x.jpg");
   }
+
+  .reservation {
+    background-image: url("../img/reservation-mb-bg@2x.jpg");
+  }
+
+  .contacts__map {
+    background-image: url("../img/contacts-mb-map@2x.jpg");
+  }
+}
+
+@media (max-width: 550px) {
+  .product-card {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .contacts__address p br {
+    display: block;
+  }
 }
 
 @media (max-width: 767px) and (min-width: 400px) {
@@ -2036,5 +3042,63 @@ button,
 
   .custom-select__item:hover:not(.focus-visible) {
     background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .site-nav__item a:hover:not(.focus-visible) {
+    opacity: 0.8;
+  }
+
+  .product-card:hover:not(.focus-visible) .product-card__front {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    -webkit-transition: 0.6s ease;
+    -o-transition: 0.6s ease;
+    transition: 0.6s ease;
+  }
+
+  .product-card:hover:not(.focus-visible) .product-card__back {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    -webkit-transition: 0.6s ease;
+    -o-transition: 0.6s ease;
+    transition: 0.6s ease;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .advantages {
+    background-image: url("../img/advantages-bg@2x.jpg");
+  }
+
+  .product-card__front--astoria {
+    background-image: url("../img/cruises/cruises-content-1@2x.jpg");
+  }
+
+  .product-card__front--elina {
+    background-image: url("../img/cruises/cruises-content-2@2x.jpg");
+  }
+
+  .product-card__front--atlantis {
+    background-image: url("../img/cruises/cruises-content-3@2x.jpg");
+  }
+
+  .product-card__front--odysseus {
+    background-image: url("../img/cruises/cruises-content-4@2x.jpg");
+  }
+
+  .product-card__front--olympia {
+    background-image: url("../img/cruises/cruises-content-5@2x.jpg");
+  }
+
+  .product-card__front--aurora {
+    background-image: url("../img/cruises/cruises-content-6@2x.jpg");
+  }
+
+  .product-card__front--leonor {
+    background-image: url("../img/cruises/cruises-content-7@2x.jpg");
+  }
+
+  .product-card__front--minio {
+    background-image: url("../img/cruises/cruises-content-8@2x.jpg");
   }
 }

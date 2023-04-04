@@ -48,6 +48,24 @@
     align-items: center;
     padding: 5px 0;
 
+    @media (hover: hover) {
+      &:hover:not(.focus-visible) {
+        opacity: 0.8;
+      }
+    }
+
+    // @media focus {
+    //   &.focus-visible:focus {
+    //     outline: 2px solid #f9fbfd;
+    //   }
+    // }
+
+    @include focus {
+      &.focus-visible:focus {
+        outline: 2px solid #f9fbfd;
+      }
+    }
+
     @include vp-767 {
       padding: 9px 0;
     }
