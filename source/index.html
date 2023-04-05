@@ -68,7 +68,7 @@
                 <a href="#advantages">Преимущества</a>
               </li>
               <li class="site-nav__item">
-                <a href="#">Направления</a>
+                <a class="focus-visible" href="#">Направления</a>
               </li>
               <li class="site-nav__item">
                 <a href="#catalog">Ближайшие круизы</a>
@@ -298,13 +298,19 @@
               <h2>Раннее бронирование</h2>
               <p>Забронируйте тур <br> за 3-6 месяцев до&nbsp;даты выезда и сэкономьте до 50%</p>
             </div>
-            <div class="reservation__form">
-              <form action="https://echo.htmlacademy.ru" method="post">
+            <div class="reservation__form" data-form-validate data-callback="callback">
+              <form action="https://echo.htmlacademy.ru" method="post" novalidate>
                 <h3>Оставьте заявку <br> и мы свяжемся с вами <br> в ближайшее время</h3>
                 <div class="reservation__us-contacts">
-                  <input type="text" name="name" placeholder="Имя" aria-label="Имя" required>
-                  <input type="tel" name="tel" placeholder="Телефон" aria-label="Телефон" required>
-                  <input type="email" name="email" placeholder="Email">
+                  <div class="custom-input" data-validate-type="text" data-limitation="name" data-message-base="Поле обязательно к заполнению" data-message-extra="Проверьте корректность заполнения поля" data-required>
+                    <input type="text" name="name" placeholder="Имя" aria-label="Имя">
+                  </div>
+                  <div class="custom-input" data-validate-type="phone" data-on-input-validate data-message-base="Поле обязательно к заполнению" data-message-extra="Проверьте корректность заполнения поля" data-message-success="Поле заполнено верно" data-required data-phone-length="18">
+                    <input type="tel" name="tel" placeholder="Телефон" aria-label="Телефон">
+                  </div>
+                  <div class="custom-input" data-validate-type="email" data-message-base="Поле обязательно к заполнению" data-required>
+                    <input type="email" name="email" placeholder="Email">
+                  </div>
                 </div>
                 <div class="reservation__checkbox">
                   <input class="visually-hidden" type="checkbox" name="consent" id="consent" checked required>
@@ -338,15 +344,6 @@
             </div>
           </div>
         </section>
-        <!-- <section class="intro">
-          <div class="container">
-            <h1>Тестовая страница.</h1>
-            <p>На данной странице показан пример модальных окон.</p>
-            <p>Перед началом разработки не забудьте удалить всё содержимое &#8249;main&#8250;&#8249;&#8260;main&#8250;.</p>
-            <p><a class="btn" href="#" data-open-modal="feedback">modal--feedback link</a></p>
-            <p><a class="btn" href="#" data-open-modal="success">modal--success link</a></p>
-          </div>
-        </section> -->
       </main>
       <footer class="page-footer">
         <div class="container page-footer__container">
@@ -395,35 +392,6 @@
         </div>
       </footer>
     </div>
-
-    <!-- Модалки -->
-    <!-- <div class="modal modal--preload" data-modal="feedback">
-      <div class="modal__wrapper">
-        <div class="modal__overlay" data-close-modal></div>
-        <div class="modal__content">
-          <p class="modal__description">Обычная модалка</p>
-          <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>
-            <svg width="15" height="15">
-              <use xlink:href="img/sprite.svg#icon-close"></use>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal modal--preload modal--fit-content modal--no-scale" data-modal="success">
-      <div class="modal__wrapper">
-        <div class="modal__overlay" data-close-modal></div>
-        <div class="modal__content">
-          <p class="modal__description">Размер этой модалки зависит от ширины контента,<br> отключена анимация-скейл</p>
-          <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>
-            <svg width="15" height="15">
-              <use xlink:href="img/sprite.svg#icon-close"></use>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div> -->
     <script src="js/vendor.min.js"></script>
     <script src="js/main.min.js"></script>
   </body>

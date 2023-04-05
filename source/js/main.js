@@ -1,6 +1,8 @@
 import {iosVhFix} from './utils/ios-vh-fix';
 import {initModals} from './modules/modals/init-modals';
 import {Form} from './modules/form-validate/form';
+import {ScrollLock} from './utils/scroll-lock';
+import {FocusLock} from './utils/focus-lock';
 
 // ---------------------------------
 
@@ -11,6 +13,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
   navToggle.addEventListener('click', function () {
     pageHeader.classList.toggle('page-header--nav-open');
+    if (pageHeader.classList.contains('page-header--nav-open')) {
+      window.scrollLock.disableScrolling();
+    } else {
+      window.scrollLock.enableScrolling();
+    }
   });
 
 
@@ -18,6 +25,8 @@ window.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------
 
   iosVhFix();
+  window.scrollLock = new ScrollLock();
+  window.focusLock = new FocusLock();
 
   // Modules
   // ---------------------------------
@@ -27,8 +36,15 @@ window.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('load', () => {
     initModals();
     const form = new Form();
-    window.form = form;
     form.init();
+    window.form = form;
+
+    // const formElement = document.querySelector('[data-callback="base"]');
+    // const item = formElement.querySelector('input');
+
+    // window.form.reset(formElement);
+    // window.form.validateForm(formElement);
+    // window.form.validateFormElement(item, true);
 
     let isMapSupport = true;
 

@@ -3,11 +3,15 @@
   position: relative;
 
   display: flex;
-  width: 530px;
-  padding: 14px 0 28px;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   @media screen and (max-width: 767px) {
-    padding: 4px 0 48px;
     width: 100%;
   }
 
@@ -98,10 +102,18 @@
   .input-message {
     position: absolute;
     right: 0;
-    bottom: -5px;
+    bottom: 47px;
+    font-size: 13px;
+    line-height: 16px;
+
+    @media screen and (max-width: 400px) {
+      font-size: 10px;
+      line-height: 14px;
+    }
 
     &.is-invalid {
       color: #ff0000;
+      // bottom: 116px;
     }
 
     &.is-valid {

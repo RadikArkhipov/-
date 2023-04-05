@@ -789,8 +789,14 @@ button,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 530px;
-  padding: 14px 0 28px;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.custom-input:last-child,
+.custom-textarea:last-child {
+  margin-bottom: 0;
 }
 
 .custom-input label,
@@ -883,7 +889,9 @@ button,
 .custom-textarea .input-message {
   position: absolute;
   right: 0;
-  bottom: -5px;
+  bottom: 47px;
+  font-size: 13px;
+  line-height: 16px;
 }
 
 .custom-input .input-message.is-invalid,
@@ -1435,7 +1443,7 @@ button,
   padding: 5px 0;
 }
 
-.site-nav__item a.focus-visible:focus.focus-visible:focus {
+.site-nav__item a.focus-visible:focus {
   outline: 2px solid #f9fbfd;
 }
 
@@ -1969,12 +1977,7 @@ button,
   padding: 11px 15px 9px;
   color: rgba(1, 28, 64, 0.7);
   border: 1px solid transparent;
-  margin-bottom: 20px;
   width: 100%;
-}
-
-.reservation__us-contacts input:last-child {
-  margin-bottom: 0;
 }
 
 .reservation__checkbox {
@@ -2016,8 +2019,8 @@ button,
   height: 18px;
   background-color: #f9fbfd;
   border: 1px solid transparent;
-  top: 3px;
-  left: -22px;
+  top: -3px;
+  left: -26px;
 }
 
 .reservation__button {
@@ -2888,8 +2891,8 @@ button,
   }
 
   .reservation__checkbox label::before {
-    top: 2px;
-    left: -27px;
+    top: -3px;
+    left: -26px;
   }
 
   .contacts__container {
@@ -2938,7 +2941,6 @@ button,
 @media screen and (max-width: 767px) {
   .custom-input,
   .custom-textarea {
-    padding: 4px 0 48px;
     width: 100%;
   }
 
@@ -3016,6 +3018,14 @@ button,
   .product-card {
     width: 100%;
     margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .custom-input .input-message,
+  .custom-textarea .input-message {
+    font-size: 10px;
+    line-height: 14px;
   }
 }
 
