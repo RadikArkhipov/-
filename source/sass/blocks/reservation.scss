@@ -207,10 +207,18 @@
   }
 
   input {
+    &:focus + label {
+      opacity: 0.8;
+    }
+
     &:checked + label::before {
       background-image: url("../img/svg/icon-tick.svg");
       background-repeat: no-repeat;
       background-position: center;
+    }
+
+    &:focus + label::before {
+      opacity: 0.8;
     }
   }
 
