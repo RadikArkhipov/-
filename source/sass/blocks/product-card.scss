@@ -50,6 +50,18 @@
     margin: 0;
   }
 
+  &:focus-within {
+    .product-card__front {
+      transform: rotateY(-180deg);
+      transition: $trans-600;
+    }
+
+    .product-card__back {
+      transform: rotateY(0deg);
+      transition: $trans-600;
+    }
+  }
+
   @include hover-focus {
     .product-card__front {
       transform: rotateY(-180deg);

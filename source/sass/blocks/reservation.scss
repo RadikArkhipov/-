@@ -183,12 +183,11 @@
     padding: 11px 15px 9px;
     color: rgba(1, 28, 64, 0.7);
     border: 1px solid transparent;
-    // margin-bottom: 20px;
     width: 100%;
 
-    // &:last-child {
-    //   margin-bottom: 0;
-    // }
+    @include hover {
+      opacity: 0.8;
+    }
   }
 }
 

@@ -32,5 +32,13 @@
         height: 16px;
       }
     }
+
+    @include hover-focus {
+      opacity: 0.8;
+
+      &:focus {
+        outline: 2px solid #f9fbfd;
+      }
+    }
   }
 }

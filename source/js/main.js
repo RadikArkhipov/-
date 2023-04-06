@@ -39,13 +39,6 @@ window.addEventListener('DOMContentLoaded', () => {
     form.init();
     window.form = form;
 
-    // const formElement = document.querySelector('[data-callback="base"]');
-    // const item = formElement.querySelector('input');
-
-    // window.form.reset(formElement);
-    // window.form.validateForm(formElement);
-    // window.form.validateFormElement(item, true);
-
     let isMapSupport = true;
 
     function init() {

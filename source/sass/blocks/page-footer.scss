@@ -33,6 +33,14 @@
   display: flex;
   margin-right: 3.44%;
 
+  @include hover-focus {
+    opacity: 0.8;
+
+    &:focus {
+      outline: 2px solid #f9fbfd;
+    }
+  }
+
   @include vp-1023 {
     margin-right: 3.68%;
 

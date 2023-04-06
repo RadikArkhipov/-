@@ -38,5 +38,13 @@
     color: inherit;
     display: block;
     padding: 5px 0;
+
+    @include hover-focus {
+      opacity: 0.8;
+
+      &:focus {
+        outline: 2px solid #f9fbfd;
+      }
+    }
   }
 }
