@@ -43,6 +43,7 @@
 .reservation__container {
   padding: 50px 160px;
   display: flex;
+  flex-wrap: wrap;
 
   @media (max-width: 1200px) {
     padding-right: 100px;
@@ -185,8 +186,12 @@
     border: 1px solid transparent;
     width: 100%;
 
-    @include hover {
+    @include hover-focus {
       opacity: 0.8;
+
+      &:focus {
+        opacity: 0.8;
+      }
     }
   }
 }

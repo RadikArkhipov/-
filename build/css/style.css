@@ -1587,6 +1587,8 @@ button,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   padding-top: 120px;
   padding-bottom: 145px;
 }
@@ -1956,6 +1958,8 @@ button,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .reservation__promotion {
@@ -2025,6 +2029,14 @@ button,
   color: rgba(1, 28, 64, 0.7);
   border: 1px solid transparent;
   width: 100%;
+}
+
+.reservation__us-contacts input.focus-visible:focus {
+  opacity: 0.8;
+}
+
+.reservation__us-contacts input.focus-visible:focus:focus {
+  opacity: 0.8;
 }
 
 .reservation__checkbox {
@@ -3180,6 +3192,10 @@ button,
   }
 
   .reservation__us-contacts input:hover:not(.focus-visible) {
+    opacity: 0.8;
+  }
+
+  .reservation__us-contacts input:hover:not(.focus-visible):focus {
     opacity: 0.8;
   }
 
