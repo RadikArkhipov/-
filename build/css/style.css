@@ -906,103 +906,54 @@ button,
 
 .custom-toggle {
   position: relative;
-  font-size: 18px;
-  line-height: 27px;
-  font-weight: 300;
+  font-size: 10px;
+  line-height: 13px;
+  color: #f9fbfd;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 500px;
-  padding: 14px 0 10px 36px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  margin-bottom: 32px;
 }
 
-.custom-toggle:last-of-type {
-  padding: 14px 0 58px 36px;
+.custom-toggle input:focus + label {
+  opacity: 0.8;
 }
 
-.custom-toggle input {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  clip: rect(0 0 0 0);
+.custom-toggle input:hover + label {
+  opacity: 0.8;
+}
+
+.custom-toggle input:checked + label::before {
+  background-image: url("../img/svg/icon-tick.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.custom-toggle input:focus + label::before {
+  opacity: 0.8;
 }
 
 .custom-toggle label {
   position: relative;
-  padding-left: 52px;
   cursor: pointer;
+  margin-left: 23px;
 }
 
-.custom-toggle label span {
-  margin-bottom: 0;
-  margin-left: 0;
-}
-
-.custom-toggle--checkbox .custom-toggle__icon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 28px;
-  height: 28px;
-  border: 1.5px solid #2c39f2;
-  -webkit-transition: border 0.3s ease;
-  -o-transition: border 0.3s ease;
-  transition: border 0.3s ease;
-}
-
-.custom-toggle--checkbox .custom-toggle__icon::before {
+.custom-toggle label::before {
   content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 20px;
-  height: 20px;
-  background-color: rgba(44, 57, 242, 0);
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  -webkit-transition: background-color 0.3s ease;
-  -o-transition: background-color 0.3s ease;
-  transition: background-color 0.3s ease;
-}
-
-.custom-toggle--radio .custom-toggle__icon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 28px;
-  height: 28px;
-  border: 1px solid #2c39f2;
-  border-radius: 50%;
-  -webkit-transition: border 0.3s ease;
-  -o-transition: border 0.3s ease;
-  transition: border 0.3s ease;
-}
-
-.custom-toggle--radio .custom-toggle__icon::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 20px;
-  height: 20px;
-  color: rgba(255, 255, 255, 0);
-  border-radius: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  -webkit-transition: color 0.3s ease;
-  -o-transition: color 0.3s ease;
-  transition: color 0.3s ease;
-}
-
-.custom-toggle input:checked + .custom-toggle__icon {
-  border: 1.5px solid #2c39f2;
-}
-
-.custom-toggle input:checked + .custom-toggle__icon::before {
-  background-color: #2c39f2;
+  width: 18px;
+  height: 18px;
+  background-color: #f9fbfd;
+  border: 1px solid transparent;
+  top: -3px;
+  left: -26px;
 }
 
 .custom-toggle.is-invalid label span {
@@ -1011,8 +962,10 @@ button,
 
 .custom-toggle .input-message {
   position: absolute;
+  font-size: 13px;
+  line-height: 16px;
   right: 0;
-  bottom: -5px;
+  bottom: 17px;
 }
 
 .custom-toggle .input-message.is-invalid {
@@ -1328,8 +1281,6 @@ button,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -1341,7 +1292,7 @@ button,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-right: auto;
+  margin-right: 30px;
 }
 
 .page-header__logo {
@@ -1349,6 +1300,14 @@ button,
   display: -ms-flexbox;
   display: flex;
   cursor: pointer;
+}
+
+.page-header__logo.focus-visible:focus {
+  opacity: 0.8;
+}
+
+.page-header__logo.focus-visible:focus:focus {
+  outline: 2px solid #f9fbfd;
 }
 
 .page-header__nav-toggle {
@@ -1411,7 +1370,7 @@ button,
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  width: 594px;
+  margin-left: auto;
 }
 
 .site-nav__list {
@@ -1427,7 +1386,7 @@ button,
 }
 
 .site-nav__item {
-  margin-right: auto;
+  margin-right: 33px;
 }
 
 .site-nav__item:last-child {
@@ -1466,8 +1425,6 @@ button,
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
   padding-top: 50px;
   padding-bottom: 50px;
 }
@@ -1476,7 +1433,7 @@ button,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-right: 3.44%;
+  margin-right: 40px;
 }
 
 .page-footer__logo.focus-visible:focus {
@@ -1501,7 +1458,7 @@ button,
 }
 
 .footer-nav__item {
-  margin-right: auto;
+  margin-right: 33px;
 }
 
 .footer-nav__item:last-child {
@@ -1531,15 +1488,11 @@ button,
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
-  width: 112px;
+  max-width: 112px;
 }
 
 .socials-list__item {
-  margin-right: auto;
-}
-
-.socials-list__item:last-child {
-  margin-right: 0;
+  margin-right: 7px;
 }
 
 .socials-list__item a {
@@ -1564,18 +1517,11 @@ button,
   margin: 0 0 12px;
 }
 
-.intro__container h1 br {
-  display: none;
-}
-
 .intro__container p {
   font-size: 20px;
   line-height: 24px;
   margin: 0;
-}
-
-.intro__container p br {
-  display: none;
+  padding-bottom: 12px;
 }
 
 .travel {
@@ -1615,17 +1561,9 @@ button,
   margin: 56px 0 24px;
 }
 
-.travel__text h3 br {
-  display: none;
-}
-
 .travel__text p {
   line-height: 24px;
   margin: 0;
-}
-
-.travel__text p br {
-  display: none;
 }
 
 .advantages {
@@ -1634,7 +1572,7 @@ button,
   background-image: url("../img/advantages-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center 100%;
+  background-position: inherit;
 }
 
 .advantages__container {
@@ -1695,35 +1633,12 @@ button,
   margin: 0 0 10px;
 }
 
-.advantages__item-wrapper h3 br {
-  display: none;
-}
-
 .advantages__item-wrapper p {
   font-size: 14px;
+  margin: 0 0 10px;
 }
 
-.advantages__liner {
-  margin: 0;
-}
-
-.advantages__liner br {
-  display: none;
-}
-
-.advantages__inclusive {
-  margin: 0;
-}
-
-.advantages__inclusive br:nth-child(n+3) {
-  display: none;
-}
-
-.advantages__zodiac {
-  margin: 0;
-}
-
-.advantages__zodiac br {
+.advantages__item-wrapper--inclusive h3 br {
   display: none;
 }
 
@@ -1745,7 +1660,7 @@ button,
 }
 
 .catalog__list {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   list-style: none;
   display: -webkit-box;
@@ -1756,7 +1671,7 @@ button,
 }
 
 .product-card {
-  width: 23%;
+  width: 260px;
   margin-right: 2.65%;
   margin-bottom: 30px;
   min-height: 386px;
@@ -1790,7 +1705,7 @@ button,
   transition: 0.6s ease;
 }
 
-.product-card.focus-visible:focus .product-card__front {
+.product-card:hover .product-card__front {
   -webkit-transform: rotateY(-180deg);
   transform: rotateY(-180deg);
   -webkit-transition: 0.6s ease;
@@ -1798,7 +1713,7 @@ button,
   transition: 0.6s ease;
 }
 
-.product-card.focus-visible:focus .product-card__back {
+.product-card:hover .product-card__back {
   -webkit-transform: rotateY(0deg);
   transform: rotateY(0deg);
   -webkit-transition: 0.6s ease;
@@ -1904,6 +1819,7 @@ button,
   right: 0;
   top: 0;
   bottom: 0;
+  overflow: auto;
 }
 
 .product-card__back h3 {
@@ -1951,6 +1867,21 @@ button,
   -ms-flex-pack: center;
   justify-content: center;
   margin-top: auto;
+  -webkit-transition: unset;
+  -o-transition: unset;
+  transition: unset;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.product-card__button.focus-visible:focus {
+  opacity: 0.8;
+}
+
+.product-card__button.focus-visible:focus:focus {
+  outline: 2px solid #f9fbfd;
 }
 
 .reservation__container {
@@ -1989,10 +1920,6 @@ button,
   max-width: 352px;
 }
 
-.reservation__promotion p br {
-  display: none;
-}
-
 .reservation__form {
   width: 403px;
   background-color: #011c40;
@@ -2006,10 +1933,6 @@ button,
   line-height: 27px;
   margin: 0 0 27px;
   color: #f9fbfd;
-}
-
-.reservation__form h3 br {
-  display: none;
 }
 
 .reservation__form form {
@@ -2036,7 +1959,7 @@ button,
 }
 
 .reservation__us-contacts input.focus-visible:focus:focus {
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .reservation__checkbox {
@@ -2059,6 +1982,10 @@ button,
   opacity: 0.8;
 }
 
+.reservation__checkbox input:hover + label {
+  opacity: 0.8;
+}
+
 .reservation__checkbox input:checked + label::before {
   background-image: url("../img/svg/icon-tick.svg");
   background-repeat: no-repeat;
@@ -2073,10 +2000,6 @@ button,
   position: relative;
   cursor: pointer;
   margin-left: 23px;
-}
-
-.reservation__checkbox label br {
-  display: none;
 }
 
 .reservation__checkbox label::before {
@@ -2105,6 +2028,10 @@ button,
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .contacts {
@@ -2139,10 +2066,6 @@ button,
   margin: 0 0 32px;
 }
 
-.contacts__text-wrapper p br {
-  display: none;
-}
-
 .contacts__address {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2159,10 +2082,6 @@ button,
   line-height: 24px;
   margin: 0;
   padding-left: 10px;
-}
-
-.contacts__address p br {
-  display: none;
 }
 
 .contacts__call {
@@ -2211,7 +2130,7 @@ button,
 .contacts__map .map {
   display: block;
   width: 100%;
-  height: 100%;
+  height: 306px;
 }
 
 /* @mixin hover-focus {
@@ -2255,26 +2174,6 @@ button,
   }
 */
 
-@media (min-width: 320px) {
-  .intro__container h1 br {
-    display: block;
-  }
-
-  .intro__container p br {
-    display: block;
-  }
-}
-
-@media (min-width: 400px) {
-  .intro__container h1 br {
-    display: none;
-  }
-
-  .intro__container p br {
-    display: none;
-  }
-}
-
 @media (min-width: 768px) {
   .intro {
     background-image: url("../img/intro-tb-bg.jpg");
@@ -2283,10 +2182,6 @@ button,
     min-height: 638px;
     padding-top: 268px;
     background-position: center 100%;
-  }
-
-  .travel__text p br {
-    display: block;
   }
 
   .reservation {
@@ -2324,12 +2219,6 @@ button,
 
   .contacts__map {
     background-image: url("../img/contacts-tb-map@2x.jpg");
-  }
-}
-
-@media (min-width: 1023px) {
-  .travel__text p br {
-    display: none;
   }
 }
 
@@ -2380,35 +2269,39 @@ button,
   }
 }
 
-@media (max-width: 1360px) {
+@media (max-width: 1359px) {
+  .catalog__list {
+    width: 824px;
+  }
+
   .product-card:nth-child(4n+4) {
     margin-right: 2.65%;
   }
 
-  .product-card {
-    width: 31.56%;
-  }
-
   .product-card:nth-child(3n+3) {
     margin-right: 0;
   }
-}
 
-@media (max-width: 1360px) and (max-width: 1023px) {
-  .product-card:nth-child(3n+3) {
-    margin-right: 4.64%;
-  }
-}
-
-@media (max-width: 1360px) and (max-width: 550px) {
-  .product-card:nth-child(3n+3) {
-    margin-right: 0;
-  }
-}
-
-@media (max-width: 1359px) {
   .reservation__promotion h2 {
     line-height: 50px;
+  }
+}
+
+@media (max-width: 1359px) and (max-width: 1053px) {
+  .product-card:nth-child(3n+3) {
+    margin-right: 2.65%;
+  }
+}
+
+@media (max-width: 1359px) and (max-width: 1023px) {
+  .product-card:nth-child(3n+3) {
+    margin-right: 4.62%;
+  }
+}
+
+@media (max-width: 1359px) and (max-width: 767px) {
+  .product-card:nth-child(3n+3) {
+    margin-right: 0;
   }
 }
 
@@ -2422,6 +2315,23 @@ button,
   .reservation__container {
     padding-right: 100px;
     padding-left: 100px;
+  }
+}
+
+@media (max-width: 1053px) {
+  .catalog__list {
+    width: 100%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+
+  .product-card:nth-child(4n+4) {
+    margin-right: 0;
+  }
+
+  .product-card:nth-child(2n+2) {
+    margin-right: 0;
   }
 }
 
@@ -2445,8 +2355,8 @@ button,
     height: 20px;
   }
 
-  .site-nav {
-    width: 503px;
+  .site-nav__item {
+    margin-right: 23px;
   }
 
   .page-footer {
@@ -2472,8 +2382,16 @@ button,
     width: 441px;
   }
 
+  .footer-nav__item {
+    margin-right: 23px;
+  }
+
   .socials-list {
-    width: 95px;
+    max-width: 95px;
+  }
+
+  .socials-list__item {
+    margin-right: 5px;
   }
 
   .socials-list__item a svg {
@@ -2508,10 +2426,6 @@ button,
     width: 47.78%;
   }
 
-  .travel__text h3 br {
-    display: block;
-  }
-
   .travel__text h3 {
     font-size: 26px;
     line-height: 36px;
@@ -2537,7 +2451,7 @@ button,
   }
 
   .advantages__item-wrapper {
-    padding: 25px 16px 15px 18px;
+    padding: 25px 16px 11px 18px;
   }
 
   .advantages__item-wrapper svg {
@@ -2546,32 +2460,12 @@ button,
     margin-bottom: 14px;
   }
 
-  .advantages__item-wrapper h3 br {
-    display: block;
-  }
-
   .advantages__item-wrapper h3 {
     line-height: 25px;
     margin-bottom: 9px;
   }
 
-  .advantages__liner br {
-    display: block;
-  }
-
-  .advantages__inclusive br {
-    display: none;
-  }
-
-  .advantages__inclusive br:nth-child(4n+4) {
-    display: block;
-  }
-
-  .advantages__zodiac br {
-    display: block;
-  }
-
-  .advantages__zodiac {
+  .advantages__item-wrapper--zodiac p {
     margin-top: 19px;
   }
 
@@ -2585,8 +2479,8 @@ button,
   }
 
   .product-card {
-    width: 47.68%;
-    margin-right: 4.64%;
+    width: 309px;
+    margin-right: 4.62%;
   }
 
   .product-card:nth-child(2n+2) {
@@ -2653,20 +2547,12 @@ button,
     margin: 0;
   }
 
+  .contacts__map .map {
+    height: 335px;
+  }
+
   .contacts__map {
     width: 47.78%;
-  }
-}
-
-@media (max-width: 1023px) and (max-width: 767px) {
-  .advantages__inclusive br:nth-child(4n+4) {
-    display: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .contacts__text-wrapper p br {
-    display: block;
   }
 }
 
@@ -2688,6 +2574,23 @@ button,
     width: 100%;
   }
 
+  .custom-toggle {
+    line-height: 12px;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    margin-bottom: 27px;
+  }
+
+  .custom-toggle label {
+    margin-left: 28px;
+  }
+
+  .custom-toggle label::before {
+    top: 2px;
+    left: -27px;
+  }
+
   .page-header {
     font-size: 18px;
     line-height: 22px;
@@ -2703,6 +2606,7 @@ button,
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    margin-right: 0;
   }
 
   .page-header__logo {
@@ -2821,7 +2725,7 @@ button,
   }
 
   .travel__container picture img {
-    width: auto;
+    width: 100%;
   }
 
   .travel__text {
@@ -2866,26 +2770,10 @@ button,
   }
 
   .advantages__item-wrapper {
-    padding: 25px 15px 20px 20px;
+    padding: 25px 15px 10px 20px;
   }
 
-  .advantages__liner br {
-    display: none;
-  }
-
-  .advantages__inclusive {
-    padding-right: 20px;
-  }
-
-  .advantages__inclusive br:nth-child(n+3):nth-child(3n+3) {
-    display: block;
-  }
-
-  .advantages__zodiac br {
-    display: none;
-  }
-
-  .advantages__zodiac {
+  .advantages__item-wrapper--zodiac p {
     margin-top: 0;
   }
 
@@ -2899,8 +2787,24 @@ button,
     margin-bottom: 30px;
   }
 
+  .catalog__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .product-card {
+    width: 270px;
+    margin-right: 0;
+  }
+
   .product-card__front {
     padding: 16px 24px;
+    min-height: 386px;
   }
 
   .product-card__back {
@@ -2932,10 +2836,6 @@ button,
     margin-bottom: 15px;
   }
 
-  .reservation__promotion p br {
-    display: block;
-  }
-
   .reservation__promotion p {
     font-size: 16px;
     line-height: 22px;
@@ -2943,11 +2843,7 @@ button,
   }
 
   .reservation__form {
-    width: 100%;
-  }
-
-  .reservation__form h3 br {
-    display: block;
+    width: 290px;
   }
 
   .reservation__form h3 {
@@ -2975,13 +2871,9 @@ button,
     margin-left: 28px;
   }
 
-  .reservation__checkbox label br {
-    display: block;
-  }
-
   .reservation__checkbox label::before {
-    top: -3px;
-    left: -26px;
+    top: 2px;
+    left: -27px;
   }
 
   .contacts__container {
@@ -2993,7 +2885,7 @@ button,
     -ms-flex-align: center;
     align-items: center;
     padding-top: 60px;
-    padding-bottom: 64px;
+    padding-bottom: 65px;
   }
 
   .contacts__text-wrapper {
@@ -3006,12 +2898,12 @@ button,
     margin-bottom: 27px;
   }
 
-  .contacts__text-wrapper p br {
-    display: none;
-  }
-
   .contacts__address p {
     margin: 0;
+  }
+
+  .contacts__map .map {
+    height: 316px;
   }
 
   .contacts__map {
@@ -3062,13 +2954,15 @@ button,
     bottom: 20px;
   }
 
-  .custom-toggle {
-    padding: 14px 0 10px 0;
-    width: 100%;
+  .custom-input .input-message,
+  .custom-textarea .input-message {
+    font-size: 10px;
+    line-height: 14px;
   }
 
-  .custom-toggle:last-of-type {
-    padding: 14px 0 58px 0;
+  .custom-toggle .input-message {
+    font-size: 10px;
+    line-height: 14px;
   }
 
   .custom-select {
@@ -3105,28 +2999,13 @@ button,
 
 @media (max-width: 550px) {
   .product-card {
-    width: 100%;
     margin-right: 0;
   }
 }
 
-@media screen and (max-width: 400px) {
-  .custom-input .input-message,
-  .custom-textarea .input-message {
-    font-size: 10px;
-    line-height: 14px;
-  }
-}
-
 @media (max-width: 320px) {
-  .contacts__address p br {
+  .advantages__item-wrapper--inclusive h3 br {
     display: block;
-  }
-}
-
-@media (max-width: 767px) and (min-width: 400px) {
-  .intro {
-    padding-top: 73px;
   }
 }
 
@@ -3141,6 +3020,14 @@ button,
 
   .custom-select__item:hover:not(.focus-visible) {
     background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .page-header__logo:hover:not(.focus-visible) {
+    opacity: 0.8;
+  }
+
+  .page-header__logo:hover:not(.focus-visible):focus {
+    outline: 2px solid #f9fbfd;
   }
 
   .site-nav__item a:hover:not(.focus-visible) {
@@ -3175,20 +3062,12 @@ button,
     outline: 2px solid #f9fbfd;
   }
 
-  .product-card:hover:not(.focus-visible) .product-card__front {
-    -webkit-transform: rotateY(-180deg);
-    transform: rotateY(-180deg);
-    -webkit-transition: 0.6s ease;
-    -o-transition: 0.6s ease;
-    transition: 0.6s ease;
+  .product-card__button:hover:not(.focus-visible) {
+    opacity: 0.8;
   }
 
-  .product-card:hover:not(.focus-visible) .product-card__back {
-    -webkit-transform: rotateY(0deg);
-    transform: rotateY(0deg);
-    -webkit-transition: 0.6s ease;
-    -o-transition: 0.6s ease;
-    transition: 0.6s ease;
+  .product-card__button:hover:not(.focus-visible):focus {
+    outline: 2px solid #f9fbfd;
   }
 
   .reservation__us-contacts input:hover:not(.focus-visible) {
@@ -3196,7 +3075,7 @@ button,
   }
 
   .reservation__us-contacts input:hover:not(.focus-visible):focus {
-    opacity: 0.8;
+    opacity: 1;
   }
 
   .contacts__call a:hover:not(.focus-visible) {

@@ -1,5 +1,5 @@
 .product-card {
-  width: 23%;
+  width: 260px;
   margin-right: 2.65%;
   margin-bottom: 30px;
   min-height: 386px;
@@ -8,38 +8,54 @@
   &:nth-child(4n+4) {
     margin-right: 0;
 
-    @media (max-width: 1360px) {
+    @media (max-width: 1359px) {
       margin-right: 2.65%;
+    }
+
+    @media (max-width: 1053px) {
+      margin-right: 0;
     }
   }
 
-  @media (max-width: 1360px) {
-    width: 31.56%;
-
+  @media (max-width: 1359px) {
     &:nth-child(3n+3) {
       margin-right: 0;
 
-      @include vp-1023 {
-        margin-right: 4.64%;
+      @media (max-width: 1053px) {
+        margin-right: 2.65%;
       }
 
-      @media (max-width: 550px) {
+      @include vp-1023 {
+        margin-right: 4.62%;
+      }
+
+      @include vp-767 {
         margin-right: 0;
       }
     }
   }
 
+  @media (max-width: 1053px) {
+    &:nth-child(2n+2) {
+      margin-right: 0;
+    }
+  }
+
   @include vp-1023 {
-    width: 47.68%;
-    margin-right: 4.64%;
+    width: 309px;
+    margin-right: 4.62%;
 
     &:nth-child(2n+2) {
       margin-right: 0;
     }
   }
 
+  @include vp-767 {
+    width: 270px;
+    margin-right: 0;
+  }
+
   @media (max-width: 550px) {
-    width: 100%;
     margin-right: 0;
   }
 
@@ -62,7 +78,7 @@
     }
   }
 
-  @include hover-focus {
+  &:hover {
     .product-card__front {
       transform: rotateY(-180deg);
       transition: $trans-600;
@@ -72,7 +88,31 @@
       transform: rotateY(0deg);
       transition: $trans-600;
     }
+
+    // &:focus {
+    //   .product-card__front {
+    //     transform: rotateY(-180deg);
+    //     transition: $trans-600;
+    //   }
+
+    //   .product-card__back {
+    //     transform: rotateY(0deg);
+    //     transition: $trans-600;
+    //   }
+    // }
   }
+
+  // &:focus {
+  //   .product-card__front {
+  //     transform: rotateY(-180deg);
+  //     transition: $trans-600;
+  //   }
+
+  //   .product-card__back {
+  //     transform: rotateY(0deg);
+  //     transition: $trans-600;
+  //   }
+  // }
 }
 
 .product-card__front {
@@ -90,6 +130,7 @@
 
   @include vp-767 {
     padding: 16px 24px;
+    min-height: 386px;
   }
 
   h3 {
@@ -199,6 +240,7 @@
   right: 0;
   top: 0;
   bottom: 0;
+  overflow: auto;
 
   @include vp-1023 {
     padding: 31px 34px 11px;
@@ -245,4 +287,14 @@
   align-items: center;
   justify-content: center;
   margin-top: auto;
+  transition: unset;
+  user-select: none;
+
+  @include hover-focus {
+    opacity: 0.8;
+
+    &:focus {
+      outline: 2px solid #f9fbfd;
+    }
+  }
 }

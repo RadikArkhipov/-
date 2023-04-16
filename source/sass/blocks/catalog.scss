@@ -35,9 +35,23 @@
 }
 
 .catalog__list {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+
+  @media (max-width: 1359px) {
+    width: 824px;
+  }
+
+  @media (max-width: 1053px) {
+    width: 100%;
+    justify-content: center;
+  }
+
+  @include vp-767 {
+    flex-direction: column;
+    align-items: center;
+  }
 }

@@ -40,10 +40,6 @@
     padding-top: 175px;
     background-position: center 100%;
 
-    @media (min-width: 400px) {
-      padding-top: 73px;
-    }
-
     @include retina {
       background-image: url("../img/intro-mb-bg@2x.jpg");
     }
@@ -56,18 +52,6 @@
     font-size: 54px;
     line-height: 66px;
     margin: 0 0 12px;
-
-    br {
-      display: none;
-
-      @media (min-width: 320px) {
-        display: block;
-      }
-
-      @media (min-width: 400px) {
-        display: none;
-      }
-    }
 
     @include vp-1023 {
       font-size: 50px;
@@ -84,18 +68,7 @@
     font-size: 20px;
     line-height: 24px;
     margin: 0;
-
-    br {
-      display: none;
-
-      @media (min-width: 320px) {
-        display: block;
-      }
-
-      @media (min-width: 400px) {
-        display: none;
-      }
-    }
+    padding-bottom: 12px;
 
     @include vp-1023 {
       font-size: 18px;

@@ -19,7 +19,11 @@
 }
 
 .footer-nav__item {
-  margin-right: auto;
+  margin-right: 33px;
+
+  @include vp-1023 {
+    margin-right: 23px;
+  }
 
   @include vp-767 {
     margin-right: 0;

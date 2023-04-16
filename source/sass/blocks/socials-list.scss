@@ -4,10 +4,10 @@
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
-  width: 112px;
+  max-width: 112px;
 
   @include vp-1023 {
-    width: 95px;
+    max-width: 95px;
   }
 
   @include vp-767 {
@@ -16,10 +16,10 @@
 }
 
 .socials-list__item {
-  margin-right: auto;
+  margin-right: 7px;
 
-  &:last-child {
-    margin-right: 0;
+  @include vp-1023 {
+    margin-right: 5px;
   }
 
   a {

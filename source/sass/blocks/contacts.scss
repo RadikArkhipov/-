@@ -17,7 +17,7 @@
     flex-direction: column-reverse;
     align-items: center;
     padding-top: 60px;
-    padding-bottom: 64px;
+    padding-bottom: 65px;
   }
 }
 
@@ -51,18 +51,6 @@
     @include vp-767 {
       margin-bottom: 27px;
     }
-
-    br {
-      display: none;
-
-      @media (max-width: 768px) {
-        display: block;
-      }
-
-      @include vp-767 {
-        display: none;
-      }
-    }
   }
 }
 
@@ -83,14 +71,6 @@
     line-height: 24px;
     margin: 0;
     padding-left: 10px;
-
-    br {
-      display: none;
-
-      @media (max-width: 320px) {
-        display: block;
-      }
-    }
 
     @include vp-1023 {
       margin: 0;
@@ -136,7 +116,15 @@
   .map {
     display: block;
     width: 100%;
-    height: 100%;
+    height: 306px;
+
+    @include vp-1023 {
+      height: 335px;
+    }
+
+    @include vp-767 {
+      height: 316px;
+    }
   }
 
   @include vp-1023 {

@@ -28,7 +28,6 @@
 
 .page-header__container {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   padding-top: 35px;
   padding-bottom: 35px;
@@ -46,17 +45,26 @@
 
 .page-header__logo-wrapper {
   display: flex;
-  margin-right: auto;
+  margin-right: 30px;
 
   @include vp-767 {
     width: 100%;
     align-items: center;
+    margin-right: 0;
   }
 }
 
 .page-header__logo {
   display: flex;
   cursor: pointer;
+
+  @include hover-focus {
+    opacity: 0.8;
+
+    &:focus {
+      outline: 2px solid #f9fbfd;
+    }
+  }
 
   @include vp-1023 {
     svg {

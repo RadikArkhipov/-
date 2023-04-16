@@ -10,6 +10,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const pageHeader = document.querySelector('[data-page-header]');
   const navToggle = document.querySelector('[data-open-menu]');
+  const overlay = document.querySelector('[data-close-mobile-menu]');
+  const links = document.querySelectorAll('[data-nav-links] a');
 
   navToggle.addEventListener('click', function () {
     pageHeader.classList.toggle('page-header--nav-open');
@@ -18,6 +20,21 @@ window.addEventListener('DOMContentLoaded', () => {
     } else {
       window.scrollLock.enableScrolling();
     }
+  });
+
+
+  if (links.length > 0) {
+    Array.from(links).forEach((link) => {
+      link.addEventListener('click', function () {
+        pageHeader.classList.remove('page-header--nav-open');
+        window.scrollLock.enableScrolling();
+      });
+    });
+  }
+
+  overlay.addEventListener('click', function () {
+    pageHeader.classList.remove('page-header--nav-open');
+    window.scrollLock.enableScrolling();
   });
 
 
@@ -51,7 +68,7 @@ window.addEventListener('DOMContentLoaded', () => {
         iconLayout: 'default#image',
         iconImageHref: 'img/sprite/icon-address.svg',
         iconImageSize: [18, 22],
-        iconImageOffset: [-15, -15],
+        iconImageOffset: [-17, -29],
       });
 
       map.controls.remove('geolocationControl'); // удаляем геолокацию

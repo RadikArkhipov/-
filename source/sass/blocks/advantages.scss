@@ -4,7 +4,7 @@
   background-image: url("../img/advantages-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center 100%;
+  background-position: inherit;
 
   @include retina {
     background-image: url("../img/advantages-bg@2x.jpg");
@@ -93,11 +93,11 @@
   padding: 30px;
 
   @include vp-1023 {
-    padding: 25px 16px 15px 18px;
+    padding: 25px 16px 11px 18px;
   }
 
   @include vp-767 {
-    padding: 25px 15px 20px 20px;
+    padding: 25px 15px 10px 20px;
   }
 
   svg {
@@ -117,14 +117,6 @@
     line-height: 27px;
     margin: 0 0 10px;
 
-    br {
-      display: none;
-
-      @include vp-1023 {
-        display: block;
-      }
-    }
-
     @include vp-1023 {
       line-height: 25px;
       margin-bottom: 9px;
@@ -133,77 +125,30 @@
 
   p {
     font-size: 14px;
-  }
-}
-
-.advantages__liner {
-  margin: 0;
-
-  br {
-    display: none;
-
-    @include vp-1023 {
-      display: block;
-    }
-
-    @include vp-767 {
-      display: none;
-    }
-  }
-}
-
-.advantages__inclusive {
-  margin: 0;
-
-  @include vp-767 {
-    padding-right: 20px;
+    margin: 0 0 10px;
   }
 
-  br {
-    &:nth-child(n+3) {
-      display: none;
+  &--inclusive {
+    h3 {
+      br {
+        display: none;
 
-      @include vp-767 {
-        &:nth-child(3n+3) {
+        @media (max-width: 320px) {
           display: block;
         }
       }
     }
+  }
 
-    @include vp-1023 {
-      display: none;
+  &--zodiac {
+    p {
+      @include vp-1023 {
+        margin-top: 19px;
+      }
 
-      &:nth-child(4n+4) {
-        display: block;
-
-        @include vp-767 {
-          display: none;
-        }
+      @include vp-767 {
+        margin-top: 0;
       }
     }
-  }
-}
-
-.advantages__zodiac {
-  margin: 0;
-
-  br {
-    display: none;
-
-    @include vp-1023 {
-      display: block;
-    }
-
-    @include vp-767 {
-      display: none;
-    }
-  }
-
-  @include vp-1023 {
-    margin-top: 19px;
-  }
-
-  @include vp-767 {
-    margin-top: 0;
   }
 }
