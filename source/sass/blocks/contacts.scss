@@ -58,9 +58,12 @@
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  position: relative;
 
-  @include vp-1023 {
-    svg {
+  svg {
+    position: absolute;
+
+    @include vp-1023 {
       margin-bottom: 15px;
     }
   }
@@ -69,8 +72,8 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
+    padding-left: 28px;
     margin: 0;
-    padding-left: 10px;
 
     @include vp-1023 {
       margin: 0;

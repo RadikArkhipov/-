@@ -1,47 +1,27 @@
 .footer-nav {
-  display: flex;
   list-style: none;
-  flex-wrap: wrap;
   margin: 0;
   padding: 0;
-  width: 594px;
   margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  column-gap: 33px;
+  row-gap: 10px;
 
   @include vp-1023 {
-    width: 441px;
+    column-gap: 23px;
   }
 
   @include vp-767 {
-    flex-direction: column;
-    width: 100%;
-    margin-bottom: 18px;
+    grid-template-columns: 1fr;
+    row-gap: 17px;
+    margin: 0 0 22px;
   }
 }
 
 .footer-nav__item {
-  margin-right: 33px;
-
-  @include vp-1023 {
-    margin-right: 23px;
-  }
-
-  @include vp-767 {
-    margin-right: 0;
-    margin-bottom: 7px;
-  }
-
-  &:last-child {
-    margin-right: 0;
-
-    @include vp-767 {
-      margin-bottom: 0;
-    }
-  }
-
   a {
     color: inherit;
-    display: block;
-    padding: 5px 0;
 
     @include hover-focus {
       opacity: 0.8;
